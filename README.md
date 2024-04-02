@@ -9,6 +9,16 @@ Stoic-Application is a web-based application for submitting job applications wit
 - Discord webhook integration for receiving application submissions
 - Customizable form fields and webhook settings
 
+
+## Previews
+![image](https://github.com/TheStoicBear/Stoic-Applications/assets/112611821/72ed682b-470d-491b-8d54-70f799230aa7)
+![image](https://github.com/TheStoicBear/Stoic-Applications/assets/112611821/8ef5198c-498c-4c83-a059-e0e19fcb1250)
+![image](https://github.com/TheStoicBear/Stoic-Applications/assets/112611821/c8b272a4-9627-4ccf-9fee-ba7704b0edf0)
+![image](https://github.com/TheStoicBear/Stoic-Applications/assets/112611821/ed525530-433f-441e-8627-665d0feac7ca)
+
+
+
+
 ## Getting Started
 To use Stoic-Application in your FiveM server, follow these steps:
 
