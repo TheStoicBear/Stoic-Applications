@@ -1,4 +1,5 @@
 # Stoic-Application
+![Stoic-Applications](https://github.com/TheStoicBear/Stoic-Applications/assets/112611821/fd109c29-7cc6-42fc-9ed2-b829c3c550b4)
 
 Stoic-Application is a web-based application for submitting job applications with a Discord webhook integration. It allows users to fill out a form, and upon submission, the application data is sent to a Discord webhook as an embedded message.
 
