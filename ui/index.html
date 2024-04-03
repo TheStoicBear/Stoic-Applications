@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>SASP Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+    <span class="close-button" onclick="display(false)">X</span>
+    <img class="centered-image" src="https://cdn.discordapp.com/attachments/916084281116352533/1224481478516277278/GokxwC0.png?ex=661da63e&is=660b313e&hm=611ed8c9df7a913c04cea532a36b1b463a8c6c8a02fbb40f623b2b5e0019b034&" alt="Banner Image">
+    
+    <form id="jobApplicationForm" class="application-form">
+      <h2 class="header">SASP Application</h2>
+      <div class="form-group">
+        <label for="age">Age?</label>
+        <input type="number" id="age" name="age" required>
+      </div>
+
+      <div class="form-group">
+        <label for="discord">Discord (ex. overseershawn)</label>
+        <input type="text" id="discord" name="discord" required>
+      </div>
+
+      <div class="form-group">
+        <label for="roleplayName">Roleplay Name:</label>
+        <input type="text" id="roleplayName" name="roleplayName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mic">Do you have a good quality working microphone?</label>
+        <select id="mic" name="mic" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="activity">How active can you be?</label>
+        <textarea id="activity" name="activity" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="purseTheft">You are driving along the roadway and see a purse theft, how do you deal with it?</label>
+        <input type="text" id="purseTheft" name="purseTheft" required>
+      </div>
+
+      <div class="form-group">
+        <label for="trafficStop">How do you park your car on a traffic stop?</label>
+        <input type="text" id="trafficStop" name="trafficStop" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tenEleven">What is a 10-11?</label>
+        <input type="text" id="tenEleven" name="tenEleven" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tenEighty">What is a 10-80?</label>
+        <input type="text" id="tenEighty" name="tenEighty" required>
+      </div>
+
+      <div class="form-group">
+        <label for="patrolAttitude">How should your attitude be during patrol?</label>
+        <input type="text" id="patrolAttitude" name="patrolAttitude" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pistolScenario">Someone is waving a pistol around while walking down the sidewalk, how do you deal with this scenario?</label>
+        <input type="text" id="pistolScenario" name="pistolScenario" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reasonJoining">Why do you want to join SASP?</label>
+        <input type="text" id="reasonJoining" name="reasonJoining" required>
+      </div>
+
+      <div class="form-group">
+        <label for="leoExperience">What LEO experience do you have? (FiveM, IRL, etc)</label>
+        <input type="text" id="leoExperience" name="leoExperience" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bringToSASP">What can you bring to SASP?</label>
+        <input type="text" id="bringToSASP" name="bringToSASP" required>
+      </div>
+
+      <div class="form-group">
+        <label for="agreeKSRPRules">Do you agree to follow all the rules on KSRP?</label>
+        <select id="agreeKSRPRules" name="agreeKSRPRules" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="disciplinaryAgreement">Do you agree that if you break a rule on KSRP you will most likely be disciplined?</label>
+        <select id="disciplinaryAgreement" name="disciplinaryAgreement" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="policyAgreement">Do you agree to follow all Policies of the SASP?</label>
+        <select id="policyAgreement" name="policyAgreement" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="additionalComments">Anything else you want to get off your chest? Say it now.</label>
+        <textarea id="additionalComments" name="additionalComments"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="signature">Sign your name. (Discord and RP Name(overseershawn / Shawn Lawson)</label>
+        <input type="text" id="signature" name="signature" required>
+      </div>
+
+      <button type="submit" class="submit-button">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<script>
+    function display(bool) {
+        if (bool) {
+            $("body").fadeIn("slow");
+        } else {
+            $("body").fadeOut("slow");
+        }
+    }
+    display(true);
+
+    window.addEventListener('message', function(event) {
+        var item = event.data;
+        console.log('Received message:', JSON.stringify(item));
+
+        if (item.type === "ui") {
+            if (item.status == true) {
+                display(true);
+            } else {
+                display(false);
+            }
+        }
+    });
+
+    $(".close-button").click(function() {
+        display(false);
+        $.post(`https://${GetParentResourceName()}/close`);
+    });
+
+    document.onkeyup = function(data) {
+        if (data.which == 27) {
+            display(false);
+            $.post(`https://${GetParentResourceName()}/close`);
+        }
+    };
+
+    document.getElementById("jobApplicationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+
+        const embedData = {
+            title: "SASP Application",
+            description: "New job application submission",
+            color: 0x0099ff,
+            fields: [
+                { name: "Age", value: formData.get("age"), inline: true },
+                { name: "Discord", value: formData.get("discord"), inline: true },
+                { name: "Roleplay Name", value: formData.get("roleplayName"), inline: true },
+                { name: "Date", value: formData.get("date"), inline: true },
+                { name: "Microphone", value: formData.get("mic"), inline: true },
+                { name: "Activity Level", value: formData.get("activity"), inline: true },
+                { name: "Purse Theft Scenario", value: formData.get("purseTheft"), inline: true },
+                { name: "Traffic Stop Parking", value: formData.get("trafficStop"), inline: true },
+                { name: "10-11", value: formData.get("tenEleven"), inline: true },
+                { name: "10-80", value: formData.get("tenEighty"), inline: true },
+                { name: "Patrol Attitude", value: formData.get("patrolAttitude"), inline: true },
+                { name: "Pistol Scenario Handling", value: formData.get("pistolScenario"), inline: true },
+                { name: "Reason for Joining SASP", value: formData.get("reasonJoining"), inline: true },
+                { name: "LEO Experience", value: formData.get("leoExperience"), inline: true },
+                { name: "What you bring to SASP", value: formData.get("bringToSASP"), inline: true },
+                { name: "Agree to KSRP Rules", value: formData.get("agreeKSRPRules"), inline: true },
+                { name: "Discipline Agreement", value: formData.get("disciplinaryAgreement"), inline: true },
+                { name: "Policy Agreement", value: formData.get("policyAgreement"), inline: true },
+                { name: "Additional Comments", value: formData.get("additionalComments"), inline: false },
+                { name: "Signature", value: formData.get("signature"), inline: true }
+            ],
+            timestamp: new Date().toISOString(),
+            footer: {
+                text: "SASP Application"
+            }
+        };
+
+        fetch("YOUR_DISCORD_URL_GOES_HERE_REPLACE_THIS_WITH_IT!", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                embeds: [embedData]
+            })
+        }).then(response => {
+            console.log("Webhook response:", response);
+            // Optionally, you can display a success message or perform other actions here
+        }).catch(error => {
+            console.error("Error sending webhook:", error);
+            // Optionally, you can display an error message or perform other actions here
+        });
+    });
+</script>
+
+</body>
+</html>

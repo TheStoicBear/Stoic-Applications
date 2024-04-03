@@ -1,0 +1,93 @@
+body {
+    background: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Set minimum height to fill the viewport */
+    overflow-y: auto; /* Enable vertical scrolling if the content exceeds the viewport */
+    padding: 20px 0; /* Added padding to the top and bottom */
+    box-sizing: border-box; /* Ensure padding is included in height calculation */
+    margin-top: 1800px; /* Adjust as needed to position the content correctly */
+}
+
+.card {
+    background-color: #2f3136;
+    border-radius: 12px;
+    padding: 50px;
+    max-width: 90%; /* Adjusted width to fit within viewport */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    text-align: center;
+}
+
+
+  
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #2f3136;
+    color: #ffffff;
+  }
+  
+  .submit-button {
+    padding: 15px;
+    background-color: #B05927;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  
+  .centered-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
